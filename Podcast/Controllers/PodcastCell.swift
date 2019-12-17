@@ -12,10 +12,22 @@ class PodcastCell: UITableViewCell {
     
 @IBOutlet weak var podcastImageView: UIImageView!
 @IBOutlet weak var podcastNameLabel:UILabel!
+@IBOutlet weak var artistNameLabel: UILabel!
     
-    
-    func configured() {
-        
+    func configured(for podcast: Podcast) {
+        podcastNameLabel.text = podcast.collectionName
+        artistNameLabel.text = podcast.artistName
+        podcastImageView.getImage(with: podcast.artworkUrl100) { (result) in
+            switch result {
+            case .failure(let error):
+                print("\(error)")
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.podcastImageView.image = image
+                }
+            }
+        }
     }
+    
     
 }
