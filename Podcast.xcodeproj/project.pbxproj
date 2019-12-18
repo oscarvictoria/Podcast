@@ -22,7 +22,6 @@
 		BE05374323A86B410026150E /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05374223A86B410026150E /* PodcastCell.swift */; };
 		BE05374523A877D90026150E /* UIImageView + Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05374423A877D90026150E /* UIImageView + Extension .swift */; };
 		BE05374923A87DAA0026150E /* FavoritePodcastVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05374823A87DAA0026150E /* FavoritePodcastVC.swift */; };
-		BE05374B23A87DC70026150E /* FavoritePodcastDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05374A23A87DC70026150E /* FavoritePodcastDVC.swift */; };
 		BEEFDD8923A937910094B3CD /* FavoritePodcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEFDD8823A937910094B3CD /* FavoritePodcast.swift */; };
 		BEEFDD8D23A96A7F0094B3CD /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEFDD8C23A96A7F0094B3CD /* FavoriteCell.swift */; };
 		BEEFDD8F23A990800094B3CD /* FavoritesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEFDD8E23A990800094B3CD /* FavoritesAPIClient.swift */; };
@@ -58,7 +57,6 @@
 		BE05374223A86B410026150E /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
 		BE05374423A877D90026150E /* UIImageView + Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension .swift"; sourceTree = "<group>"; };
 		BE05374823A87DAA0026150E /* FavoritePodcastVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePodcastVC.swift; sourceTree = "<group>"; };
-		BE05374A23A87DC70026150E /* FavoritePodcastDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePodcastDVC.swift; sourceTree = "<group>"; };
 		BEEFDD8823A937910094B3CD /* FavoritePodcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePodcast.swift; sourceTree = "<group>"; };
 		BEEFDD8C23A96A7F0094B3CD /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		BEEFDD8E23A990800094B3CD /* FavoritesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAPIClient.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				BE05373E23A839A80026150E /* PodcastDVC.swift */,
 				BE05374223A86B410026150E /* PodcastCell.swift */,
 				BE05374823A87DAA0026150E /* FavoritePodcastVC.swift */,
-				BE05374A23A87DC70026150E /* FavoritePodcastDVC.swift */,
 				BEEFDD8C23A96A7F0094B3CD /* FavoriteCell.swift */,
 			);
 			path = Controllers;
@@ -282,7 +279,6 @@
 				BE05373923A837060026150E /* AppError.swift in Sources */,
 				BE05373B23A837260026150E /* NetworkHelper.swift in Sources */,
 				BE05373F23A839A80026150E /* PodcastDVC.swift in Sources */,
-				BE05374B23A87DC70026150E /* FavoritePodcastDVC.swift in Sources */,
 				BE05374923A87DAA0026150E /* FavoritePodcastVC.swift in Sources */,
 				BEEFDD8923A937910094B3CD /* FavoritePodcast.swift in Sources */,
 				BEEFDD8D23A96A7F0094B3CD /* FavoriteCell.swift in Sources */,

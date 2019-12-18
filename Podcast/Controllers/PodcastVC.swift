@@ -48,6 +48,7 @@ class PodcastVC: UIViewController {
         }
         let podcast = podcasts[indexPath.row]
         podcastDVC.podcast = podcast
+        podcastDVC.firstSegue = true
     }
 
 }

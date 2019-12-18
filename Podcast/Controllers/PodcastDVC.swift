@@ -11,6 +11,8 @@ import UIKit
 class PodcastDVC: UIViewController {
     
     var podcast: Podcast?
+    var firstSegue = Bool()
+    var favoritesPodcast: Podcast?
     
     var name: String?
     
@@ -19,6 +21,7 @@ class PodcastDVC: UIViewController {
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var trackNumberLabel: UILabel!
     @IBOutlet weak var genresLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -28,23 +31,55 @@ class PodcastDVC: UIViewController {
     
     
     func updateUI() {
-        guard let podcast = podcast else {
-            fatalError("could not find podcast. Check model,")
-        }
-        collectionNameLabel.text = podcast.collectionName
-        artistNameLabel.text = podcast.artistName
-        trackNumberLabel.text = podcast.trackId.description
-        genresLabel.text = podcast.genres[0]
-        podcastImageView.getImage(with: podcast.artworkUrl60) { (result) in
-            switch result {
-            case .failure(let appError):
-                print("app error \(appError)")
-            case .success(let image):
-                DispatchQueue.main.async {
-                    self.podcastImageView.image = image
+        if firstSegue {
+//            favoriteButton.isEnabled = true
+            guard let podcast = podcast else {
+                fatalError("could not find podcast. Check model,")
+            }
+            collectionNameLabel.text = podcast.collectionName
+            artistNameLabel.text = podcast.artistName
+            trackNumberLabel.text = podcast.trackId.description
+            //        genresLabel.text = podcast.genres[0]
+            podcastImageView.getImage(with: podcast.artworkUrl600) { (result) in
+                switch result {
+                case .failure(let appError):
+                    print("app error \(appError)")
+                case .success(let image):
+                    DispatchQueue.main.async {
+                        self.podcastImageView.image = image
+                    }
+                }
+            }
+        } else {
+//            favoriteButton.isEnabled = false
+//            favoriteButton.isHidden = true
+            guard let podcast = podcast else {
+                fatalError("could not find podcast. Check model,")
+            }
+            
+            FavoritesAPIClient.theFavorites(trackId: podcast.trackId) { (result) in
+                switch result {
+                case .failure(let error):
+                    print("error \(error)")
+                case .success(let podcasts):
+                    DispatchQueue.main.async {
+                        self.artistNameLabel.text = podcasts.artistName
+                        self.collectionNameLabel.text = podcasts.collectionName
+                        self.podcastImageView.getImage(with: podcasts.artworkUrl600) { (result) in
+                            switch result {
+                            case .failure(let error):
+                                print("error \(error)")
+                            case .success(let image):
+                                DispatchQueue.main.async {
+                                    self.podcastImageView.image = image
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
+        
     }
     
     
@@ -52,19 +87,11 @@ class PodcastDVC: UIViewController {
         
         print("button pressed")
         
-        guard let somePodcast = podcast else {
+        guard let somePodcast = favoritesPodcast else {
             fatalError()
         }
-
-//        guard let trackId = trackNumberLabel,
-//            let podcast = podcast,
-//            let collectionName = collectionNameLabel,
-//            let artworkUrl600 = podcastImageView else {
-//                return
-//        }
         
-        
-        let favPodcast = FavoritePodcast(trackId: somePodcast.trackId, favoritedBy: "Oscar", collectionName: somePodcast.collectionName, artworkUrl600: somePodcast.artworkUrl60)
+        let favPodcast = Podcast(trackId: somePodcast.trackId, artistName: somePodcast.artistName, collectionName: somePodcast.collectionName, trackName: somePodcast.trackName, artworkUrl600: somePodcast.artworkUrl600, trackCount: somePodcast.trackCount, favoritedBy: "Oscar")
         
         PodcastAPIClient.postPodcast(podcast: favPodcast) { (result) in
             switch result {

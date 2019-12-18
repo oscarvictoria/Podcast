@@ -39,7 +39,7 @@ struct PodcastAPIClient {
         
     }
     
-    static func postPodcast(podcast: FavoritePodcast, completion: @escaping (Result <Bool, AppError>)-> ()) {
+    static func postPodcast(podcast: Podcast, completion: @escaping (Result <Bool, AppError>)-> ()) {
         
         let endpointURLString = "https://5c2e2a592fffe80014bd6904.mockapi.io/api/v1/favorites"
         
@@ -70,7 +70,7 @@ struct PodcastAPIClient {
     }
     
     
-    static func getFavorites(completion: @escaping (Result <[FavoritePodcast],AppError>)->()) {
+    static func getFavorites(completion: @escaping (Result <[Podcast],AppError>)->()) {
         let endpointURLString = "https://5c2e2a592fffe80014bd6904.mockapi.io/api/v1/favorites"
         
         guard let url = URL(string: endpointURLString) else {
@@ -86,7 +86,7 @@ struct PodcastAPIClient {
                 print("error \(appError)")
             case .success(let data):
                 do {
-                    let podcast = try JSONDecoder().decode([FavoritePodcast].self, from: data)
+                    let podcast = try JSONDecoder().decode([Podcast].self, from: data)
                     completion(.success(podcast))
                 } catch {
                     completion(.failure(.decodingError(error)))

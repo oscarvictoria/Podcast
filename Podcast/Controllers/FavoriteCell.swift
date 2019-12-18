@@ -14,7 +14,7 @@ class FavoriteCell: UITableViewCell {
 @IBOutlet weak var collectionNameLabel: UILabel!
 @IBOutlet weak var name: UILabel!
 
-    func configured(for podcast: FavoritePodcast) {
+    func configured(for podcast: Podcast) {
         collectionNameLabel.text = podcast.collectionName
         name.text = podcast.favoritedBy
         favoriteImageView.getImage(with: podcast.artworkUrl600) { [weak self] (result) in

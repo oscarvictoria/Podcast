@@ -12,7 +12,7 @@ class FavoritePodcastVC: UIViewController {
     
 @IBOutlet weak var tableView: UITableView!
     
-    var favorites = [FavoritePodcast]() {
+    var favorites = [Podcast]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -41,13 +41,15 @@ class FavoritePodcastVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let favoriteDVC = segue.destination as? FavoritePodcastDVC, let indexPath = tableView.indexPathForSelectedRow else {
-            fatalError("error")
+        guard let podcastDVC = segue.destination as? PodcastDVC,
+            let indexPath = tableView.indexPathForSelectedRow else {
+                fatalError("error")
         }
-        let podcasts = favorites[indexPath.row]
-        favoriteDVC.podcast = podcasts
+        let podcast = favorites[indexPath.row]
+        podcastDVC.podcast = podcast
+        podcastDVC.firstSegue = false
     }
-
+    
 }
 
 extension FavoritePodcastVC: UITableViewDataSource {

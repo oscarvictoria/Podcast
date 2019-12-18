@@ -17,7 +17,7 @@ class PodcastCell: UITableViewCell {
     func configured(for podcast: Podcast) {
         podcastNameLabel.text = podcast.collectionName
         artistNameLabel.text = podcast.artistName
-        podcastImageView.getImage(with: podcast.artworkUrl100) { (result) in
+        podcastImageView.getImage(with: podcast.artworkUrl600) { (result) in
             switch result {
             case .failure(let error):
                 print("\(error)")

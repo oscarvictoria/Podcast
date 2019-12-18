@@ -165,6 +165,7 @@
                     <connections>
                         <outlet property="artistNameLabel" destination="Ot6-L1-8c4" id="E7s-YE-uwA"/>
                         <outlet property="collectionNameLabel" destination="TFp-cM-DCl" id="RDn-XJ-OcM"/>
+                        <outlet property="favoriteButton" destination="KQc-fM-lZh" id="uWP-4F-LP8"/>
                         <outlet property="genresLabel" destination="M1t-mu-ziV" id="UUV-Qm-knn"/>
                         <outlet property="podcastImageView" destination="b6F-an-mxM" id="wcE-uC-LDc"/>
                         <outlet property="trackNumberLabel" destination="HQc-gn-257" id="7zh-pe-UCE"/>
@@ -172,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ATU-bp-u1V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2850.7246376811595" y="126.5625"/>
+            <point key="canvasLocation" x="3371" y="318"/>
         </scene>
         <!--Search-->
         <scene sceneID="nfo-ny-5yU">
@@ -247,7 +248,7 @@
                                             <outlet property="collectionNameLabel" destination="2xn-qy-Ukg" id="ZWE-IR-Xsr"/>
                                             <outlet property="favoriteImageView" destination="1Vb-JX-w6E" id="Ime-dE-awo"/>
                                             <outlet property="name" destination="lbC-Ta-AxD" id="lrg-hG-LFQ"/>
-                                            <segue destination="CL4-hw-fO7" kind="show" id="aB6-lE-fbF"/>
+                                            <segue destination="UfY-s3-NpZ" kind="show" id="E4j-dZ-edY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -270,76 +271,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOc-FX-GEs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="806.25"/>
-        </scene>
-        <!--Favorite PodcastDVC-->
-        <scene sceneID="MpW-Ck-bV2">
-            <objects>
-                <viewController id="CL4-hw-fO7" customClass="FavoritePodcastDVC" customModule="Podcast" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QBu-f8-IAG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="crp-l5-Zeb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="290"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmV-Xt-6DZ">
-                                <rect key="frame" x="8" y="428" width="398" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xz3-46-nC5">
-                                <rect key="frame" x="8" y="469" width="398" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mes-4G-3hn">
-                                <rect key="frame" x="8" y="527" width="398" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9y6-ia-yuJ">
-                                <rect key="frame" x="8" y="498" width="398" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="crp-l5-Zeb" firstAttribute="top" secondItem="qWg-lX-UhC" secondAttribute="top" id="2lT-49-Vl7"/>
-                            <constraint firstItem="crp-l5-Zeb" firstAttribute="height" secondItem="qWg-lX-UhC" secondAttribute="height" multiplier="0.4" id="4S3-W0-zOQ"/>
-                            <constraint firstItem="qWg-lX-UhC" firstAttribute="trailing" secondItem="Xz3-46-nC5" secondAttribute="trailing" constant="8" id="5Na-Hf-fLg"/>
-                            <constraint firstItem="crp-l5-Zeb" firstAttribute="leading" secondItem="qWg-lX-UhC" secondAttribute="leading" id="DPT-Oi-spB"/>
-                            <constraint firstItem="mes-4G-3hn" firstAttribute="leading" secondItem="qWg-lX-UhC" secondAttribute="leading" constant="8" id="ErR-sc-R4B"/>
-                            <constraint firstItem="9y6-ia-yuJ" firstAttribute="leading" secondItem="qWg-lX-UhC" secondAttribute="leading" constant="8" id="F4w-P7-Kd7"/>
-                            <constraint firstItem="9y6-ia-yuJ" firstAttribute="top" secondItem="Xz3-46-nC5" secondAttribute="bottom" constant="8" id="LLl-CS-dUa"/>
-                            <constraint firstItem="qWg-lX-UhC" firstAttribute="trailing" secondItem="hmV-Xt-6DZ" secondAttribute="trailing" constant="8" id="Pkl-8h-ipo"/>
-                            <constraint firstItem="hmV-Xt-6DZ" firstAttribute="top" secondItem="crp-l5-Zeb" secondAttribute="bottom" constant="50" id="QnJ-yk-jZk"/>
-                            <constraint firstItem="Xz3-46-nC5" firstAttribute="top" secondItem="hmV-Xt-6DZ" secondAttribute="bottom" constant="20" id="STR-lu-tv6"/>
-                            <constraint firstItem="qWg-lX-UhC" firstAttribute="trailing" secondItem="mes-4G-3hn" secondAttribute="trailing" constant="8" id="YEx-yf-ECD"/>
-                            <constraint firstItem="crp-l5-Zeb" firstAttribute="trailing" secondItem="qWg-lX-UhC" secondAttribute="trailing" id="dos-gE-o2c"/>
-                            <constraint firstItem="qWg-lX-UhC" firstAttribute="trailing" secondItem="9y6-ia-yuJ" secondAttribute="trailing" constant="8" id="g1j-6Q-yGU"/>
-                            <constraint firstItem="Xz3-46-nC5" firstAttribute="leading" secondItem="qWg-lX-UhC" secondAttribute="leading" constant="8" id="mDI-bn-uXA"/>
-                            <constraint firstItem="mes-4G-3hn" firstAttribute="top" secondItem="9y6-ia-yuJ" secondAttribute="bottom" constant="8" id="pXa-Ew-pHV"/>
-                            <constraint firstItem="hmV-Xt-6DZ" firstAttribute="leading" secondItem="qWg-lX-UhC" secondAttribute="leading" constant="8" id="zl3-qh-Tng"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="qWg-lX-UhC"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="4xB-9m-jge"/>
-                    <connections>
-                        <outlet property="podcastArtistLabel" destination="Xz3-46-nC5" id="Fgx-VN-VCv"/>
-                        <outlet property="podcastGenreLabel" destination="9y6-ia-yuJ" id="N4v-hH-p6J"/>
-                        <outlet property="podcastImageView" destination="crp-l5-Zeb" id="abH-5x-p57"/>
-                        <outlet property="podcastNameLabel" destination="hmV-Xt-6DZ" id="eNk-CP-NEW"/>
-                        <outlet property="trackNumberLabel" destination="mes-4G-3hn" id="4iD-Ry-eY4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="38w-CX-B9X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2850.7246376811595" y="805.58035714285711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DWx-s1-3YQ">
@@ -383,4 +314,7 @@
     <resources>
         <image name="circle" catalog="system" width="64" height="62"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YuG-fy-OTp"/>
+    </inferredMetricsTieBreakers>
 </document>

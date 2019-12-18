@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AppError: Error, CustomStringConvertible {
+enum AppError: Error {
     case badURL(String) // associated value
     case noResponse
     case networkClientError(Error) // no internet connection
@@ -18,8 +18,5 @@ enum AppError: Error, CustomStringConvertible {
     case badStatusCode(Int) // 404, 500
     case badMimeType(String) // image/jpg
     
-    var description: String {
-        return "Apperror: \(self)"
-    }
 }
 
